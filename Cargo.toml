@@ -1,0 +1,20 @@
+[package]
+name = "stark-wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+concurrent = ["winterfell/concurrent", "std"]
+default = ["std"]
+std = ["hex/std", "winterfell/std"]
+
+[dependencies]
+winterfell = { git = "https://github.com/novifinancial/winterfell.git", rev = "cf3e557" }
+miden = { git = "https://github.com/maticnetwork/miden.git", rev = "923730f" }
+
+hex = { version = "0.4", optional = true }
+log = { version = "0.4", default-features = false }
+blake3 = { version = "1.0", default-features = false }
+env_logger = { version = "0.9", default-features = false }
